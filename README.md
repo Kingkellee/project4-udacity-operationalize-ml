@@ -1,6 +1,6 @@
-**This Badge showcase my abilities to operationalize production microservices.**
+**This Badge showcase my ability to operationalize production microservices.**
 
-<include a CircleCI status badge, here>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Kingkellee/project4-udacity-operationalize-ml/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Kingkellee/project4-udacity-operationalize-ml/tree/master)
 
 ## Project Overview
 
