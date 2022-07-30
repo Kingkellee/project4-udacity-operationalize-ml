@@ -12,8 +12,8 @@ kubectl run sklearn-api --image=$dockerpath --port=80 --labels app=sklearn-api
 
 # Step 3:
 # List kubernetes pods
-kubectl get pods
+kubectl get pod
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward sklearn-api 8000:80
+kubectl port-forward sklearn-api 8080:80

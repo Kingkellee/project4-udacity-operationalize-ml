@@ -1,50 +1,108 @@
+**This Badge showcase my abilities to operationalize production microservices.**
+
 <include a CircleCI status badge, here>
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project sougth to test the skills acquired in the cource Microservices at Scale using AWS & Kubernetes by Udacity Cloud DevOps Nanodegree.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+A pre-trained `sklearn` model to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on was given to operationalize a Machine Learning Microservice API. More about the data, which was initially taken from Kaggle can bee found here [the data source site](https://www.kaggle.com/c/boston-housing).
 
 ### Project Tasks
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+The aim of this project is to operationalize a working machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project my ability to complete the following task was tested:
+
+- Test project code using linting
+- Complete a Dockerfile to containerize an application
+- Deploy a containerized application using Docker and make a prediction
+- Improve log statements in the source code for the application
+- Configure Kubernetes and create a Kubernetes cluster
+- Deploy a container using Kubernetes and make a prediction
+- Upload a complete Github repo with CircleCI to indicate that code has been tested
 
 You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
 ---
 
-## Setup the Environment
+### Running This App
 
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
+## 1. Setup the Environment
+
+- Create a virtualenv with Python 3.7 and activate it.
+  - This project runs well on Python 3.7, so you should have Python 3.7 available on your host.
+
 ```bash
 python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
 # Check the Python path using `which python3`
-# Use a command similar to this one:
+# Use this command to enable Virtual Env run on Pytghon 3.7:
 python3 -m virtualenv --python=<path-to-Python3.7> .devops
+#use this command to activate Virtual Env
 source .devops/bin/activate
 ```
-* Run `make install` to install the necessary dependencies
 
-### Running `app.py`
+- Run `make install`
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+```bash
+ #To install the necessary dependencies
+ make install
+```
 
-### Kubernetes Steps
+- Install Hadolint
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+# To Install Hadolint on Linux
+
+```bash
+ # Step 1.
+ sudo apt update
+```
+
+```bash
+ # Step 2.
+ sudo apt-get install build-essential
+```
+
+```bash
+ # Step 3 run the Homebrew installation script
+ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+```bash
+ # Step 4 add homebrew to path
+ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+```bash
+ # Step 5. Optional
+ brew install gcc
+```
+
+```bash
+ # Step 6. Install Hadolint
+ brew install hadolint
+```
+
+```bash
+ # Step 7. Lint Dockerfile
+ hadolint Dockerfile
+```
+
+## 2. Docker Steps: `./run_docker.sh`
+
+```bash
+ #To run Docker Container
+ ./run_docker.sh
+```
+
+## 3. Upload to Docker Hub: `./upload_docker.sh`
+
+```bash
+ #To upload to docker hub, run
+ ./upload_docker.sh
+```
+
+### 4. Kubernetes Steps: `./run_kubernetes.sh`
+
+```bash
+ #To deploy to kubernetes, run
+ ./run_kubernetes.sh
+```
