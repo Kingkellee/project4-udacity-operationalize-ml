@@ -16,4 +16,4 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward sklearn-api 8000:80
+kubectl port-forward sklearn-api 8080:80
